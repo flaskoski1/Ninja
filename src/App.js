@@ -94,3 +94,115 @@ export default App;
 // }
 //dottuka
 //4.2.3 Invocation as a constructor
+// function Ninja() {
+// 	this.skulk = function() {
+// 		return this;
+// 	};
+// }
+// var ninja1 = new Ninja();
+// var ninja2 = new Ninja();
+// let sum;
+// if (ninja1.skulk() === ninja1) {
+// 	sum = "the 1st ninja is sulking";
+// }
+// let sum1;
+// if (ninja2.skulk() === ninja2) {
+// 	sum = "the 2st ninja is sulking";
+// }
+//dottuka
+//constructor return values 4.8 str 74
+// function Ninja() {
+// 	this.skulk = function() {
+// 		return true;
+// 	};
+// 	return 1;
+// }
+// let sum, sum1, sum2;
+// if (Ninja === 1) {
+// 	sum2 = "Return value honored when not called as a constructor";
+// }
+// var ninja = new Ninja();
+// if (typeof ninja === "object") {
+// 	sum = "Object returned when called as a constructor";
+// }
+// if (typeof ninja.skulk === "function") {
+// 	sum1 = " ninja object has a skulk method";
+// }
+//dottuka
+//Constructors explicitly returning object values 4.9 str 75
+// let sum, sum1;
+// let puppet = {
+// 	rules: false
+// };
+// function Emperor() {
+// 	this.rules = true;
+// 	return puppet;
+// }
+// var emperor = new Emperor();
+// if (emperor === puppet) {
+// 	sum = "The emperor is merely a puppet";
+// }
+// if (emperor.rules === false) {
+// 	sum1 = "The puppet does not know how to rule!";
+// }
+//dottuka
+//Binding a specific context to a function 4.10 str 77
+/* <button
+id="test"
+onClick={function Button() {
+  this.clicked = false;
+  this.click = function() {
+    this.clicked = true;
+    let sum, button;
+
+    if (button.clicked) {
+      sum = "the button has been clicked";
+    }
+  };
+}}
+>
+Click Me !
+</button>
+;<script></script> */
+// var button = new Button();
+// var elem = document.getElementById("test");
+// elem.addEventListener("click", button.click);
+//dottuka
+//Using the apply and call methods to supply the function context 4.11 str 79
+// function juggle() {
+// 	var result = 0;
+// 	for (let n = 0; n <= arguments.length; n++) {
+// 		result += arguments[n];
+// 	}
+// 	this.result = result;
+// }
+// var ninja1 = {};
+// var ninja2 = {};
+// let sum, sum1;
+// juggle.apply(ninja1, [1, 2, 3, 4]);
+// console.log(ninja1, "sad");
+// juggle.call(ninja2, 5, 6, 7, 8);
+// console.log(ninja2, "dva");
+
+// if (ninja1.result === 10) {
+// 	sum = "juggled via apply";
+// }
+// if (ninja2.result === 26) {
+// 	sum1 = "juggled via call";
+// }
+//dottuka
+//Building a forEach function to demonstrate setting a function context
+// function forEach(list, callback) {
+// 	for (let n = 0; n < list.length; n++) {
+// 		callback.call(list[n], n);
+// 	}
+// }
+// let sum;
+// var weapons = [{ type: "shuriken" }, { type: "katana" }, { type: "nunchucks" }];
+// forEach(weapons, function(index) {
+// 	if (this === weapons[index]) {
+// 		sum = "Got the expected value of " + weapons[index].type;
+// 	}
+// });
+//dottuka - proveri ushte ednash posleden primer
+// 4.3 Fixing the problem of function contexts str 83
