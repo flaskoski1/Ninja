@@ -4,10 +4,26 @@ import "./App.css";
 import callBack from "../src/callBack";
 
 function App() {
-	return <div className="App"></div>;
+  return <div className="App"></div>;
 }
 
 export default App;
+//5.1 Understanding closured str. 92
+//dottuka
+// 4.3.1 using arrow functions to get around function contexts
+// function Button() {
+//   this.clicked = false;
+//   this.click = () => {
+//     this.clicked = true;
+//     // if (Button.clicked) {
+//     click = "the button was clicked";
+//     // }
+//   };
+//   var button = new Button();
+//   var elem = document.getElementById("test");
+//   elem.addEventListener("click", button.click);
+// }
+//dottuka
 //od pocheten div
 /* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
