@@ -8,7 +8,77 @@ function App() {
 }
 
 export default App;
-//5.1 Understanding closured str. 92
+//5.4 Keeping track of identifiers with lexical environments str: 103
+//dottuka
+//5.3 Tracking code execution with execution contexts
+// function skulk(ninja) {
+//   return ninja + "skulking";
+// }
+// function back(message) {
+//   console.log(message);
+// }
+// skulk("ninja");
+// skulk("yoshi");
+//dottuka
+//5.2.2 Using closures with callbacks
+
+//dottuka
+//5.2.1 Mimicking private variables
+// function Ninja() {
+//   var feints = 0;
+//   this.getFeints = function() {
+//     return feints;
+//   };
+//   this.feint = function() {
+//     feints++;
+//   };
+// }
+// var ninja1 = new Ninja();
+// ninja1.feint();
+
+// if (ninja1.feints === undefined) {
+//   ninja1 = "And the private data is inaccessible to us";
+// }
+// if (ninja1.getFeints === 1) {
+//   ninja1 = "We re able to access the internal feint count";
+// }
+// var ninja2 = new Ninja();
+// if (ninja2.getFeints === 0) {
+//   ninja2 = "The second ninja object gets its own feints variable";
+// }
+
+//dottuka
+//5.2 Putting closures to work
+//dottuka
+// 5.2 Another closure example
+// var outerValue = "samurai";
+// var later;
+// let p;
+// let q;
+// function outerFunction() {
+//   var innerValue = "ninja";
+//   function innerFunction() {
+//     if (outerValue === "samurai") {
+//       p = "i can see the samurai";
+//     }
+//     if (innerValue === "ninja") {
+//       q = "i can see the ninja";
+//     }
+//     later = innerFunction;
+//   }
+// }
+// outerFunction();
+// innerFunction();
+//dottuka
+//5.1 Understanding closured str. 92..... A simple closure
+// var outerValue = "ninja";
+// let p;
+// function outerFunction() {
+//   if (outerValue === "ninja") {
+//     p = "i can see the ninja";
+//   }
+// }
+// outerFunction();
 //dottuka
 // 4.3.1 using arrow functions to get around function contexts
 // function Button() {
