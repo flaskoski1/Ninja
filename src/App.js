@@ -6,7 +6,111 @@ function App() {
 }
 
 export default App;
+//5.5.3 Registering identifiers within lexical environments str. 113
+//dottuka
+//5.8 using const and let
+// let first;
+// let first1;
+// let first2;
+// let first3;
+// const GLOBAL_NINJA = "yoshi";
+// function reportActivity() {
+//   const functionActivity = "jumping";
+//   for (let i = 1; i < 3; i++) {
+//     let forMessage = GLOBAL_NINJA + "" + functionActivity;
+//     if (forMessage === "Yoshi jumping") {
+//       first = "Yoshi is jumping within the block";
+//     }
+//     if (i) {
+//       first1 = " Current loop counter:" + i;
+//     }
+//     if (
+//       typeof functionActivity === undefined &&
+//       typeof forMessage === undefined
+//     ) {
+//       first2 = "Loop variables not accesible outside the loop";
+//     }
+//   }
+// }
+// if (
+//   typeof functionActivity === undefined &&
+//   typeof i === undefined &&
+//   typeof forMessage === undefined
+// ) {
+//   first3 = "we cannot see outside a function";
+// }
+// reportActivity();
+//dottuka
+//5.5.2 Variable definition keywords and lexical environments
+// let first;
+// let first1;
+// let first2;
+// let first4;
+// let forMessage;
+// var globalNinja = "Yoshi";
+// function reportActivity() {
+//   var functionActivity = "jumping";
+//   for (var i = 1; i < 3; i++) {
+//     var forMessage = globalNinja + "" + functionActivity;
+//     if (forMessage === "Yoshi jumping") {
+//       first = "Yoshi is jumping within the for block";
+//     }
+//     if (i) {
+//       first1 = "Current loop counter:" + i;
+//     }
+//     if (i === 3 && forMessage === "Yoshi jumping") {
+//       first2 = "Loop variables accessible outside of the loop";
+//     }
+//   }
+// }
+// reportActivity();
+// if (
+//   typeof functionActivity === undefined &&
+//   typeof i === undefined &&
+//   typeof forMessage === undefined
+// ) {
+//   first4 = "we cannot see the function variables outside of a function";
+// }
+//dottuka
+//5.5 Understanding types of JavaScript variables
+// const firstConst = " samurai";
+// if (firstConst === " samurai") {
+//   first = "firstConst is a samurai";
+// }
+//dottuka
+//code nesting and lexical environments
+// var ninja = "Muneyoshi";
+// function skulk() {
+//   var action = "skulking";
+//   function report() {
+//     var intro = "Aha!";
+//     if (intro === "Aha!") {
+//       ninja2 = "local";
+//     }
+//     if (action === "skulking") {
+//       ninja3 = "outer";
+//     }
+//     if (ninja === "Muneyoshi") {
+//       ninja1 = "global";
+//     }
+//   }
+//   report();
+// }
+// skulk();
+//dottuka
 //5.4 Keeping track of identifiers with lexical environments str: 103
+// var ninja = "Muneyoshi";
+// function skulk() {
+//   var action = "skulking";
+//   function report() {
+//     var reportNum = 3;
+//     for (var i = 0; i < reportNum; i++) {
+//       console.log((ninja1 = ninja + "" + action + " " + i));
+//     }
+//   }
+//   report();
+// }
+// skulk();
 //dottuka
 //5.3 Tracking code execution with execution contexts
 // function skulk(ninja) {
