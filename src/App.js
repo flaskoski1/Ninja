@@ -1,12 +1,113 @@
 import React from "react";
 import "./App.css";
+let first;
+let first1;
+let first2;
 
 function App() {
   return <div className="App"></div>;
 }
 
 export default App;
+//5.13 Using a closure in a timer interval callback
+/* <div id="box1">First Box</div>
+<div id="box2">Second Box</div>
+<script>
+  {animateIt("box1")}
+  {animateIt("box2")}
+  {first}
+  {first1}
+  {first2}      </script>
+ */
+//function animateIt(elementId) {
+//   var elem = document.getElementById(elementId);
+//   var tick = 0;
+//   var timer = setInterval(function() {
+//     if (tick < 100) {
+//       elem.style.left ? elem.style.top : tick + "px";
+//       tick++;
+//     } else {
+//       clearInterval(timer);
+//       if (tick === 100) {
+//         first = "tick accesed via closure";
+//       }
+//       if (elem) {
+//         first1 = "element also accessed via a closure";
+//       }
+//       if (timer) {
+//         first2 = "Timer reference also obtanied via a closure";
+//       }
+//     }
+//   });
+// }
+//dottuka
+//5.12 Private variables are accessed through functions not through objects
+// function Ninja() {
+//   var feints = 0;
+//   this.getFeints = function() {
+//     return feints;
+//   };
+//   this.feint = function() {
+//     feints++;
+//   };
+// }
+// var ninja1 = new Ninja();
+// ninja1.feint();
+// var imposter = {};
+// imposter.getFeints = ninja1.getFeints;
+// if (imposter.getFeints() === 1) {
+//   first = "The imposter has access to the feints variable";
+// }
+
+//dottuka
+//5.11 Approximate private variables with closures
+// function Ninja() {
+//   var feints = 0;
+//   this.getFeints = function() {
+//     return feints;
+//   };
+//   this.feint = function() {
+//     feints++;
+//   };
+// }
+// var ninja1 = new Ninja();
+// if (ninja1.feints === undefined) {
+//   first = "And the private data is inaccesible to us";
+// }
+// ninja1.feint();
+// if (ninja1.getFeints() === 1) {
+//   first1 = "we re able to access the internal feint count";
+// }
+// var ninja2 = new Ninja();
+// if (ninja2.getFeints() === 0) {
+//   first2 = "the second ninja object gets its own feints variable";
+// }
+
+//dottuka
+// Accesing a functon before its declaration
+// if (typeof fun === "function") {
+//   first = "fun is za function even though its definition isnt reached yet";
+// }
+// if (typeof myFunExp === undefined) {
+//   first1 = "but we cannot acces function expressions";
+// }
+// if (typeof myArrow === "undefined") {
+//   first2 = "Nor arrow functions";
+// }
+// function fun() {}
+// var myFunExp = function() {};
+// var myArrow = x => x;
+
+//dottuka
 //5.5.3 Registering identifiers within lexical environments str. 113
+// const firstRonin = "Kiyokawa";
+// check(firstRonin);
+// function check(ronin) {
+//   if (ronin === "Kiyokawa") {
+//     first = "the ronin was checked";
+//   }
+// }
+
 //dottuka
 //5.8 using const and let
 // let first;
