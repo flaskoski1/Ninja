@@ -5,10 +5,188 @@ let first1;
 let first2;
 
 function App() {
-  return <div className="App"></div>;
+  return (
+    <div className="App">
+      {first}
+      {first1}
+      {first2}
+    </div>
+  );
 }
 
 export default App;
+//6.8 Sending data to and receiving data from a generator
+//dottuka
+//6.7 Iterating over a DOM tree with generators
+// function* DomTraversal(element) {
+//   yield element;
+//   element = element.firstElementChild;
+//   while (element) {
+//     yield* DomTraversal(element);
+//     element = element.nextElementSiblind;
+//   }
+// }
+// const subTree = document.getElementById("subTree");
+// for (let element of DomTraversal(subTree)) {
+//   if (element !== null) {
+//     first = element.nodeName;
+//   }
+// }
+//dottuka
+//6.6 Recursive DOM traversal
+/* <div id="subTree">
+  <form>
+    <input type="text"/>
+  </form>
+  <p>Paragraph</p>
+  <span>Span</span>
+</div>
+<script>
+  function traverseDOM(element, callBack){
+    callBack(element);
+    element=element.firstElementChild;
+    while(element){
+      traverseDOM(element,callBack);
+      element=element.nexteElementSibling
+    }
+  }
+  const subTree=document.getElementById("subTree");
+  traverseDOM(subTree, function(element){
+    if(element !==null){
+      first=element.nodeName
+    }
+  })
+</script> */
+//dottuka
+//6.5 Using generators for generating IDs
+// function* IdGenerator() {
+//   let id = 0;
+//   while (true) {
+//     yield ++id;
+//   }
+// }
+// const idIterator = IdGenerator();
+// const ninja1 = { id: idIterator.next().value };
+// const ninja2 = { id: idIterator.next().value };
+// const ninja3 = { id: idIterator.next().value };
+// if (ninja1.id === 1) {
+//   first = "first ninja has id1";
+// }
+// if (ninja2.id === 2) {
+//   first1 = "second ninja has id2";
+// }
+// if (ninja3.id === 3) {
+//   first2 = "third ninja has id3";
+// }
+//dottuka
+//6.4 Using yield* to delegate to another generator
+// function* warriorGenerator() {
+//   yield "sun tzu";
+//   yield* NinjaGenerator();
+//   yield "Genghis khan";
+// }
+// function* NinjaGenerator() {
+//   yield "Hattori";
+//   yield "Yoshi";
+// }
+// for (let warrior of warriorGenerator()) {
+//   if (warrior !== null) {
+//     first = warrior;
+//   }
+// }
+//dottuka
+//6.3 Iterating over g enerator results with a while loop
+// function* WeaponGenerator() {
+//   yield "Katana";
+//   yield "Wakizashi";
+// }
+// const weaponsIterator = WeaponGenerator();
+// let item;
+// while (!(item = weaponsIterator.next()).done) {
+//   if (item !== null) {
+//     first = item.value;
+//   }
+// }
+//dottuka
+//6.2.1 Controlling a generator through an iterator object
+// function* WeaponGenerator() {
+//   yield "Katana";
+//   yield "Wakizashi";
+// }
+// const weaponIterator = WeaponGenerator();
+// const result1 = weaponIterator.next();
+// if (
+//   typeof result1 === "object" &&
+//   result1.value === "Katana" &&
+//   !result1.done
+// ) {
+//   first = "Katana received!";
+// }
+// const result2 = weaponIterator.next();
+// if (
+//   typeof result2 === "object" &&
+//   result2.value === "Wakizashi" &&
+//   !result2.done
+// ) {
+//   first1 = "Wakizashi received!";
+// }
+// const result3 = weaponIterator.next();
+// if (
+//   typeof result3 === "object" &&
+//   result3.value === undefined &&
+//   !result3.done
+// ) {
+//   first2 = "there are no more results!";
+// }
+//dottuka
+//6.2 Working with generator functions
+// function* WeaponGenerator() {
+//   yield "katana";
+//   yield "Wakizashi";
+//   yield " Kusarigama";
+// }
+// for (let weapon of WeaponGenerator()) {
+//   if (weapon !== undefined) {
+//     first = weapon;
+//   }
+// }
+//dottuka
+//asynccode
+//async(function*(){
+// try{
+//   var ninjas = syncGetJSON("ninjas.json");
+//   var missions = syncGetJSON(ninjas[0].missionsUrl)
+//   var missionDetails = syncGetJSON(missions[0].detailUrl)
+// }
+// catch (e){
+// }
+//})
+//dottuka
+//same chapter head
+// getJSON("ninjas.json", function(err, ninjas){
+//   if(err){console.log("error fetching list of ninjas", err)
+// return
+// }
+// getJSON(ninjas[0].missionsUrl, function(err, missions){
+//   if(err){console.log("error locating ninja missions", err)
+// return
+// }
+// getJSON(missions[0].detailsUrl, function(err, missionDetails){
+//   if(err){console.log("error locating mission details", err)
+// return
+// }
+// }
+//dottuka
+//6.1 Making our async code elegant with generators and promises
+// try{
+//   var ninjas = syncGetJSON("ninjas.json");
+//   var missions = syncGetJSON(ninjas[0].missionsUrl)
+//   var missionDetails = syncGetJSON(missions[0].detailUrl)
+// }
+// catch (e){
+
+// }
+//dottuka
 //5.13 Using a closure in a timer interval callback
 /* <div id="box1">First Box</div>
 <div id="box2">Second Box</div>
