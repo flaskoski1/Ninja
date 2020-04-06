@@ -3,6 +3,8 @@ import "./App.css";
 let first;
 let first1;
 let first2;
+let result1;
+let result2;
 
 function App() {
   return (
@@ -10,12 +12,57 @@ function App() {
       {first}
       {first1}
       {first2}
+      {result1}
+      {result2}
     </div>
   );
 }
 
 export default App;
+//6.3.2 Diving into promises page. 149
+//dottuka
+//6.3 Working with promisses 6.10 Creating a simple promise
+// const ninjaPromise = new Promise((resolve, reject) => {
+//   resolve("Hattori");
+//   //reject("An error resolving a promise!")
+// });
+// ninjaPromise.then((ninja) => {
+//   if (ninja === "Hattori") {
+//     first = "we were promised hattori!";
+//   } else {
+//     (err) => {
+//       //  fail("there shouldtn be error");
+//     };
+//   }
+// });
+//dottuka
+//Tracking generators with execution contexts
+// function* NinjaGenerator(action) {
+//   yield "Hattori" + action;
+//   return "Yoshi" + action;
+// }
+// const ninjaIterator = NinjaGenerator("skulk");
+// result1 = ninjaIterator.next();
+// result2 = ninjaIterator.next();
+//dottuka
 //6.9 Throwing exceptions to generators
+// function* NinjaGenerator() {
+//   try {
+//     yield "Hattori";
+//     fail("the expected exception didnt occur");
+//   } catch (e) {
+//     if (e === "Catch this!") {
+//       first = "Aha! we caught an exception";
+//     }
+//   }
+// }
+// const ninjaIterator = NinjaGenerator();
+// const result1 = ninjaIterator.next();
+// if (result1.value === "Hattori") {
+//   first1 = "we got Hattori";
+// }
+// ninjaIterator.throw("Catch this");
+
 //dottuka
 //6.8 Sending data to and receiving data from a generator
 // function* ninjaGenerator(action) {
