@@ -15,7 +15,25 @@ function App() {
 }
 
 export default App;
+//6.9 Throwing exceptions to generators
+//dottuka
 //6.8 Sending data to and receiving data from a generator
+// function* ninjaGenerator(action) {
+//   const imposter = yield "Hatori" + action;
+//   if (imposter === "Hanzo") {
+//     first = "The generator has been infiltrated";
+//   }
+//   yield "Yoshi (" + imposter + ")" + action;
+// }
+// const ninjaIterator = ninjaGenerator("skulk");
+// const result1 = ninjaIterator.next();
+// if (result1.value === "Hattori skulk") {
+//   first1 = "Hatori is skulking";
+// }
+// const result2 = ninjaIterator.next("Hanzo");
+// if (result2.value === "Yoshi (Hanzo) skulk") {
+//   first2 = "we have an imposter";
+// }
 //dottuka
 //6.7 Iterating over a DOM tree with generators
 // function* DomTraversal(element) {
