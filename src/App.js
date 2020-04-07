@@ -17,35 +17,50 @@ function App() {
     </div>
   );
 }
+
+export default App;
+//7.1 Understanding prototypes
+//dottuka
+//6.5 summary
+//dottuka
+//6.4 combining generators and promises
+//dottuka
+// 6.3.6 waiting for a number of promises
+//dottuka
+//6.3.5 chaining promises
+//dottuka
+//6.3.4 creating our first real-world promise
+//dottuka
+//6.3.3 rejecting promises
+//dottuka
+//6.3.2 Diving into promises page. 149
 // report("at code start");
 
-var ninjaDelayedPromise = new Promise((resolve, reject) => {
-  // report("ninjaDelayedPromise executor");
-  setTimeout(() => {
-    // report("Resolving ninjadelayedpromise");
-    resolve("Hattori");
-  }, 500);
-});
-if (ninjaDelayedPromise !== null) {
-  first = "after creating ninjadelayedpromies";
-}
-ninjaDelayedPromise.then((ninja) => {
-  if (ninja === "Hattori") {
-    first1 = "ninjadelayedpromise resolve handled with hattori";
-  }
-});
-const ninjaImmediatePromise = new Promise((resolve, reject) => {
-  // report("ninjaImmedatiatePromise executore. Immediate resolve");
-  resolve("Yoshi");
-});
-ninjaImmediatePromise.then((ninja) => {
-  if (ninja === "yoshi") {
-    first2 = "ninjaimmediate promise resolve handled with yoshi";
-  }
-});
+// var ninjaDelayedPromise = new Promise((resolve, reject) => {
+// report("ninjaDelayedPromise executor");
+// setTimeout(() => {
+// report("Resolving ninjadelayedpromise");
+//     resolve("Hattori");
+//   }, 500);
+// });
+// if (ninjaDelayedPromise !== null) {
+//   first = "after creating ninjadelayedpromies";
+// }
+// ninjaDelayedPromise.then((ninja) => {
+//   if (ninja === "Hattori") {
+//     first1 = "ninjadelayedpromise resolve handled with hattori";
+//   }
+// });
+// const ninjaImmediatePromise = new Promise((resolve, reject) => {
+// report("ninjaImmedatiatePromise executore. Immediate resolve");
+//   resolve("Yoshi");
+// });
+// ninjaImmediatePromise.then((ninja) => {
+//   if (ninja === "yoshi") {
+//     first2 = "ninjaimmediate promise resolve handled with yoshi";
+//   }
+// });
 // report("at code end");
-export default App;
-//6.3.2 Diving into promises page. 149
 //dottuka
 //6.3 Working with promisses 6.10 Creating a simple promise
 // const ninjaPromise = new Promise((resolve, reject) => {
