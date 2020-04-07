@@ -17,7 +17,33 @@ function App() {
     </div>
   );
 }
+// report("at code start");
 
+var ninjaDelayedPromise = new Promise((resolve, reject) => {
+  // report("ninjaDelayedPromise executor");
+  setTimeout(() => {
+    // report("Resolving ninjadelayedpromise");
+    resolve("Hattori");
+  }, 500);
+});
+if (ninjaDelayedPromise !== null) {
+  first = "after creating ninjadelayedpromies";
+}
+ninjaDelayedPromise.then((ninja) => {
+  if (ninja === "Hattori") {
+    first1 = "ninjadelayedpromise resolve handled with hattori";
+  }
+});
+const ninjaImmediatePromise = new Promise((resolve, reject) => {
+  // report("ninjaImmedatiatePromise executore. Immediate resolve");
+  resolve("Yoshi");
+});
+ninjaImmediatePromise.then((ninja) => {
+  if (ninja === "yoshi") {
+    first2 = "ninjaimmediate promise resolve handled with yoshi";
+  }
+});
+// report("at code end");
 export default App;
 //6.3.2 Diving into promises page. 149
 //dottuka
