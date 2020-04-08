@@ -5,6 +5,8 @@ let first1;
 let first2;
 let result1;
 let result2;
+let result3;
+let result4;
 
 function App() {
   return (
@@ -14,12 +16,102 @@ function App() {
       {first2}
       {result1}
       {result2}
+      {result3}
+      {result4}
     </div>
   );
 }
 
 export default App;
+//7.5 Examining the type of an instance and its constructor page. 180
+//dottuka
+//7.4 With prototypes, everything can be changed at runtime
+// function Ninja() {
+//   this.swung = true;
+// }
+// const ninja1 = new Ninja();
+// Ninja.prototype.swingSword = function () {
+//   return this.swung;
+// };
+// if (ninja1.swingSword()) {
+//   first = "Method exists, even out of order";
+// }
+// Ninja.prototype = {
+//   pierce: function () {
+//     return true;
+//   },
+// };
+// if (ninja1.swingSword()) {
+//   first1 = "Our ninja can still swing!";
+// }
+// const ninja2 = new Ninja();
+// if (ninja2.pierce()) {
+//   first2 = " Newly created ninjas can pierce";
+// }
+// if (!ninja2.swingSword) {
+//   result1 = " But they cannot swing!";
+// }
+//dottuka
+//7.3 Observing the precedence of initializing activites
+// function Ninja() {
+//   this.swung = false;
+//   this.swingSword = function () {
+//     return !this.swung;
+//   };
+// }
+// Ninja.prototype.swingSword = function () {
+//   return this.swung;
+// };
+// const ninja = new Ninja();
+// if (ninja.swingSword()) {
+//   first = "called the instance method, not the prototype method";
+// }
+
+//dottuka
+//7.2 creating a new instance with a prototyped method
+// function Ninja() {
+//   Ninja.prototype.swingSword = function () {
+//     return true;
+//   };
+// }
+// const ninja1 = Ninja();
+// if (ninja1 === undefined) {
+//   first = "No instance of Ninja created";
+// }
+
+// const ninja2 = new Ninja();
+// if (ninja2 && ninja2.swingSword && ninja2.swingSword()) {
+//   first1 = "instance exists and method is callable";
+// }
+//dottuka
 //7.1 Understanding prototypes
+// const yoshi = { skulk: true };
+// const hattori = { sneak: true };
+// const kuma = { creep: true };
+// if ("skulk" in yoshi) {
+//   first = "yoshi can skulk";
+// }
+// if (!("sneak" in yoshi)) {
+//   first1 = "yoshi cannot sneak";
+// }
+// if (!("creep" in yoshi)) {
+//   first2 = "yoshi cannot creep";
+// }
+// Object.setPrototypeOf(yoshi, hattori);
+// if ("sneak" in yoshi) {
+//   result1 = "yoshi can now sneak";
+// }
+// if (!("creep" in hattori)) {
+//   result2 = "hattori cannot creep";
+// }
+// Object.setPrototypeOf(hattori, kuma);
+// if ("creep" in hattori) {
+//   result3 = "hattori can now creep";
+// }
+// if (!("creep" in yoshi)) {
+//   result4 = "yoshi can also creep";
+// }
+
 //dottuka
 //6.5 summary
 //dottuka
