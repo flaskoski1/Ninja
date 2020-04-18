@@ -7,6 +7,9 @@ let result1;
 let result2;
 let result3;
 let result4;
+let result5;
+let result6;
+let result7;
 
 function App() {
   return (
@@ -18,12 +21,244 @@ function App() {
       {result2}
       {result3}
       {result4}
+      {result5}
+      {result6}
+      {result7}
     </div>
   );
 }
 
 export default App;
+//9.1 Creating arrays
+//dottuka
+//9. Dealing with collections page:224
+//7.15 Inheritance in ES6
+// class Person {
+//   constructor(name) {
+//     this.name = name;
+//   }
+//   dance() {
+//     return true;
+//   }
+// }
+// class Ninja extends Person {
+//   constructor(name, weapon) {
+//     super(name);
+//     this.weapon = weapon;
+//   }
+//   wieldWeapon() {
+//     return true;
+//   }
+// }
+// var person = new Person("Bob");
+// if (person instanceof Person) {
+//   first = " A person is a Person ";
+// }
+// if (person.dance()) {
+//   first1 = " A person can dance ";
+// }
+// if (person.name === "Bob") {
+//   first2 = " We can call it by name ";
+// }
+// if (!(person instanceof Ninja)) {
+//   result1 = " But it s not a ninja ";
+// }
+// if (!("wieldWeapon" in person)) {
+//   result2 = " And it cannot wield a weapon";
+// }
+
+// var ninja = new Ninja("Yoshi", "Wakizashi");
+// if (ninja instanceof Ninja) {
+//   result3 = " A ninja is a Ninja ";
+// }
+// if (ninja.wieldWeapon()) {
+//   result4 = " That can wield a weapon";
+// }
+// if (ninja instanceof Person) {
+//   result5 = " But it is also a person";
+// }
+// if (ninja.name === "Yoshi") {
+//   result6 = " That has a name";
+// }
+// if (ninja.dance()) {
+//   result7 = " And enjoys dancing!";
+// }
+//dottuka
+//7.14 Static methods in ES6
+// class Ninja {
+//   constructor(name, level) {
+//     this.name = name;
+//     this.level = level;
+//   }
+//   swingSword() {
+//     return true;
+//   }
+//   static compare(ninja1, ninja2) {
+//     return ninja1.level - ninja2.level;
+//   }
+// }
+// var ninja1 = new Ninja("Yoshi", 4);
+// var ninja2 = new Ninja("Hattori", 3);
+
+// if (!("compare" in ninja1) && !("compare" in ninja2)) {
+//   first = " A ninja instance doesnt know how to compare ";
+// }
+
+// if (Ninja.compare(ninja1, ninja2) > 0) {
+//   first1 = " The Ninja class can do the comparison! ";
+// }
+// if (!("swingSword" in Ninja)) {
+//   first2 = " The Ninja class cannot swing a sword! ";
+// }
+//dottuka
+//7.13 Creating a class in ES6
+// class Ninja {
+//   constructor(name) {
+//     this.name = name;
+//   }
+//   swingSword() {
+//     return true;
+//   }
+// }
+// var ninja = new Ninja("Yoshi");
+// if (ninja instanceof Ninja) {
+//   first = "our ninja is a Ninja";
+// }
+// if (ninja.name === "Yoshi") {
+//   first1 = " named Yoshi";
+// }
+// if (ninja.swingSword()) {
+//   first2 = " and he can swing a sword.";
+// }
+//dottuka
+//7.12 Watch out for changes to constructor prototypes
+// function Ninja() {}
+// const ninja = new Ninja();
+// if (ninja instanceof Ninja) {
+//   first = "our ninja is Ninja";
+// }
+// Ninja.prototype = {};
+// if (!(ninja instanceof Ninja)) {
+//   first1 = "the ninja is now not a ninja!??";
+// }
+
+//dottuka
+//7.11 Studying the instanceof operator
+// function Person() {}
+// function Ninja() {}
+// Ninja.prototype = new Person();
+// const ninja = new Ninja();
+
+// if (ninja instanceof Ninja) {
+//   first = " our ninja is a Ninja!";
+// }
+// if (ninja instanceof Person) {
+//   first1 = "A ninja is also a Person.";
+// }
+
+//dottuka
+//7.10 Fixing the constructor property problem
+// function Person() {}
+// Person.prototype.dance = function () {};
+// function Ninja() {}
+// Ninja.prototype = new Person();
+
+// Object.defineProperty(Ninja.prototype, "constructor", {
+//   enumerable: false,
+//   value: Ninja,
+//   writable: true,
+// });
+// var ninja = new Ninja();
+// if (ninja.constructor === Ninja) {
+//   first = "Connection from ninja instances to Ninja constructor reestablished!";
+// }
+// for (let prop in Ninja.prototype) {
+//   if (prop === "dance") {
+//     first1 = "The only enumerable property is dance!";
+//   }
+// }
+
+//dottuka
+//7.9 Configuring properties
+// let ninja = {};
+// ninja.name = "Yoshi";
+// ninja.weapon = "kusarigama";
+
+// Object.defineProperty(ninja, "sneaky", {
+//   configurable: false,
+//   enumerable: false,
+//   value: true,
+//   writable: true,
+// });
+// if ("sneaky" in ninja) {
+//   first = "we can access the new property";
+// }
+// for (let prop in ninja) {
+//   if (prop !== undefined) {
+//     first1 = "an enumerated property: " + prop;
+//   }
+// }
+//dottuka
+//7.8 Achieving inheritance with prototypes
+// function Person() {}
+// Person.prototype.dance = function () {};
+// function Ninja() {}
+// Ninja.prototype = new Person();
+// const ninja = new Ninja();
+// if (ninja instanceof Ninja) {
+//   first = "ninja receives functionality from the ninja prototype";
+// }
+// if (ninja instanceof Person) {
+//   first1 = "ninja receives functionality from the person prototype";
+// }
+// if (ninja instanceof Object) {
+//   first2 = "ninja receives functionality from the object prototype";
+// }
+// if (typeof ninja.dance === "function") {
+//   result1 = "ninja receives functionality from the function, and can dance";
+// }
+//dottuka
+//7.3 Achieving inheritance
+//7.7 Trying to achieve inheritance with prototypes
+// function Person() {}
+// Person.prototype.dance = function () {};
+// function Ninja() {}
+// Ninja.prototype = { dance: Person.prototype.dance };
+// const ninja = new Ninja();
+// if (ninja instanceof Ninja) {
+//   first = "ninja receives functionality from the ninja prototype";
+// }
+// if (ninja instanceof Person) {
+//   first1 = "ninja receives functionality from the person prototype";
+// }
+// if (ninja instanceof Object) {
+//   first2 = "ninja receives functionality from the object prototype";
+// }
+//dottuka
+//7.6 Instantiating a new object using a reference to a constructor
+// function Ninja() {}
+// const ninja = new Ninja();
+// const ninja2 = new Ninja.constructor();
+
+// if (ninja2 instanceof Ninja) {
+//   first = "instanceof identifies the constructor, it s a Ninja";
+// }
+// if (ninja !== ninja2) {
+//   first1 = "But not the same Ninja";
+// }
+//dottuka
 //7.5 Examining the type of an instance and its constructor page. 180
+// function Ninja() {}
+// const ninja = new Ninja();
+// if (typeof ninja === "object") {
+//   first = "The type of the instance is object";
+// }
+// if (typeof ninja instanceof Ninja) {
+//   first1 = "instanceof identifies the constructor";
+// }
+// if (ninja.constructor === Ninja) {
+//   first2 = "The ninja object was created by the Ninja function";
+// }
 //dottuka
 //7.4 With prototypes, everything can be changed at runtime
 // function Ninja() {
