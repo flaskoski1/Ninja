@@ -29,7 +29,216 @@ function App() {
 }
 
 export default App;
+//9.8 Testing arrays with the every and some methods
+//dottuka
+//9.7 Mapping an array
+// const ninjas = [
+//   { name: "Yagyu", weapon: "shuriken" },
+//   { name: "Yoshi", weapon: "katana" },
+//   { name: "Kuma", weapon: "wakizashi" },
+// ];
+// const weapons = ninjas.map((ninja) => ninja.weapon);
+// if (
+//   weapons[0] === "shuriken" &&
+//   weapons[1] === "katana" &&
+//   weapons[2] === "wakizashi" &&
+//   weapons.length === 3
+// ) {
+//   first = "the new array contains all weapons";
+// }
+//dottuka
+//9.6Naive extraction of a weapons array
+// const ninjas = [
+//   { name: "Yagyu", weapon: "shuriken" },
+//   { name: "Yoshi", weapon: "katana" },
+//   { name: "Kuma", weapon: "wakizashi" },
+// ];
+// const weapons = [];
+// ninjas.forEach((ninja) => {
+//   weapons.push(ninja.weapon);
+// });
+// if (
+//   weapons[0] === "shuriken" &&
+//   weapons[1] === "katana" &&
+//   weapons[2] === "wakizashi" &&
+//   weapons.length === 3
+// ) {
+//   first = "the new array contains all weapons";
+// }
+//dottuka
+//9.5 Using the forEach method
+// ninjas.forEach((ninja) => {
+//   if (ninja !== "") {
+//     first = ninja;
+//   }
+// });
+//dottuka
+// const ninjas = ["yagyu", "kuma", "hattori"];
+// for (let i = 0; i < ninjas.length; i++) {
+//   if (ninjas[i] !== null) {
+//     first = ninjas[i];
+//   }
+// }
+//9.4 Removing and adding items at arbitrary positions
+// const ninjas = ["Yagyu", "Kuma", "Hattori", "Fuma"];
+// var removedItems = ninjas.splice(1, 1);
+// if (removedItems.length === 1) {
+//   first = "One item was removed";
+// }
+// if (removedItems[0] === "Kuma") {
+//   first2 = "first element kuma";
+// }
+// if (ninjas.length === 3) {
+//   first1 = "There are now three items in the array";
+// }
+
+// if (ninjas[0] === "Yagyu") {
+//   result1 = "the first item is still Yagyu";
+// }
+// if (ninjas[1] === "Hattori") {
+//   result2 = " Hattori is now the second element";
+// }
+// if (ninjas[2] === "Fuma") {
+//   result3 = " and fuma is the third element";
+// }
+// removedItems = ninjas.splice(1, 2, "Mochizuki", "Yoshi", "Momochi");
+// if (removedItems.length === 2) {
+//   first = "Now we ve removed two items ";
+// }
+// if (removedItems[0] === "Hattori") {
+//   first1 = " Hattori was removed";
+// }
+// if (removedItems[1] === "Fuma") {
+//   first2 = " Fuma was removed";
+// }
+
+// if (ninjas.length === 4) {
+//   result1 = " We ve inserted some new items ";
+// }
+// if (ninjas[0] === "Yagyu") {
+//   result2 = " Yagyu is here";
+// }
+// if (ninjas[1] === "Mochizuki") {
+//   result3 = " also Mochizuki";
+// }
+// if (ninjas[2] === "Yoshi") {
+//   result4 = " also Yoshi";
+// }
+// if (ninjas[3] === "Momochi") {
+//   result5 = " also Momochi";
+// }
+//dottuka
+//9.3 Naive way to remove an array item
+// const ninjas = ["Yagyu", "Kuma", "Hattori", "Fuma"];
+// delete ninjas[1];
+// if (ninjas.length === 4) {
+//   first = " Length still reports there are 4 items";
+// }
+// if (ninjas[0] === "Yagyu") {
+//   first1 = "First item is Yagyu";
+// }
+
+// if (ninjas[1] === undefined) {
+//   first2 = " We ve simply created hole";
+// }
+// if (ninjas[2] === "Hattori") {
+//   result1 = "Hattori still the third element";
+// }
+// if (ninjas[3] === "Fuma") {
+//   result2 = " And fuma still the last element";
+// }
+//dottuka
+//9.2 Adding and removing array items
+// const ninjas = [];
+// if (ninjas.length === 0) {
+//   first = "An array starts empty";
+// }
+// ninjas.push("Kuma");
+// if (ninjas[0] === "Kuma") {
+//   first1 = "Kuma is the first item in the array";
+// }
+// if (ninjas.length === 1) {
+//   first2 = "We have one item in the array";
+// }
+// ninjas.push("Hattori");
+// if (ninjas[0] === "Kuma") {
+//   first = "Kuma is still first";
+// }
+// if (ninjas[1] === "Hattori") {
+//   first1 = "Hattori is added to the ende of the array";
+// }
+// if (ninjas.length === 2) {
+//   first2 = "We have two items in the array!";
+// }
+// ninjas.unshift("Yagyu");
+// if (ninjas[0] === "Yagyu") {
+//   first = " Now Yagyu is the first item";
+// }
+// if (ninjas[1] === "Kuma") {
+//   first1 = " Kuma moved to the second place";
+// }
+// if (ninjas[2] === "Hattori") {
+//   first2 = "And Hattori to the third place";
+// }
+// if (ninjas.length === 3) {
+//   result1 = " We have three items in the array!";
+// }
+// const lastNinja = ninjas.pop();
+// if (lastNinja === "Hattori") {
+//   first = " We have removed Hattori from the end of the array";
+// }
+// if (ninjas[0] === "Yagyu") {
+//   first1 = " Now Yagyu is still the first item";
+// }
+// if (ninjas[1] === "Kuma") {
+//   first2 = " Kuma is still in second place";
+// }
+// if (ninjas.length === 2) {
+//   result1 = " Now there are two items in the array!";
+// }
+// const firstNinja = ninjas.shift();
+// if (firstNinja === "Yagyu") {
+//   first = " We ve removed Yagyu from the beginning of the array";
+// }
+// if (ninjas[0] === "Kuma") {
+//   first1 = " Kuma has shifted to the first place";
+// }
+// if (ninjas.length === 1) {
+//   result1 = " Now there is only one item in the array!";
+// }
+//dottuka
 //9.1 Creating arrays
+// const ninjas = ["Kuma", "Hattori", "Yagyu"];
+// const samurai = new Array("Oda", "Tomoe");
+// if (ninjas.length === 3) {
+//   first = "There are three ninjas";
+// }
+// if (samurai.length === 2) {
+//   first1 = "And only two samurai";
+// }
+// if (ninjas[0] === "Kuma") {
+//   first2 = "Kuma is the first ninja";
+// }
+// if (samurai[samurai.length - 1] === "Tomoe") {
+//   result1 = "Tomoe is the last samurai";
+// }
+// if (ninjas[4] === undefined) {
+//   result2 = "We get undefined if we try to access an out of bounds index";
+//   ninjas[4] = "Ishi";
+// }
+// if (ninjas.length === 5) {
+//   result3 = "Arrays are automatically expanded";
+// }
+// ninjas.length = 2;
+// if (ninjas.length === 2) {
+//   result4 = "There are only two ninjas now";
+// }
+// if (ninjas[0] === "Kuma" && ninjas[1] === "Hattori") {
+//   result5 = "Kuma and Hattori";
+// }
+// if (ninjas[2] === undefined) {
+//   result6 = "But we've lost Yagyu";
+// }
 //dottuka
 //9. Dealing with collections page:224
 //7.15 Inheritance in ES6
