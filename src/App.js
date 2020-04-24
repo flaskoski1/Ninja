@@ -29,7 +29,129 @@ function App() {
 }
 
 export default App;
+//9.14 Objects have access to properties that werent explicitly defined
+//dottuka
+//9.13 Simulating array-like methods
+// const body = (
+//   <body>
+//     <input id="first" />
+//     <input id="second" />
+//     <script>
+//       const elems={
+//         length:0,
+//         add:function(elem){
+//           Array.prototype.push.call(this, elem)
+//         },
+//         gather: function(id){
+//           this.add(document.getElementById(id))
+//         },
+//         find: function(callback){
+//           return Array.prototype.find.call(this,callback)
+//         }
+//       };
+//       elems.gather("first");
+//       if(elems.length===1 && elems[0].nodeType){
+//         "Verify that we have an element in our stash"
+//       }
+//       elems.gather("second")
+//       if(elems.length===2 && elems[1].nodeType){
+//         "Verify the other insertion"
+//       }
+//       elems.find(elem=>elem.id==="second")
+//       if(foudn && found.id==="second"){
+//         "We'have found ou"
+//       }
+//     </script>
+//   </body>
+// );
+//dottuka
+//9.12 Aggregating items with reduce
+// const numbers = [1, 2, 3, 4];
+// const sum = numbers.reduce((aggregated, number) => aggregated + number, 0);
+// if (sum === 10) {
+//   first = " The sum of the first four numbers is 10";
+// }
+//dottuka
+//9.11 Sorting an array
+// const ninjas = [{ name: "Yoshi" }, { name: "Yagyu" }, { name: "Kuma" }];
+// ninjas.sort(function (ninja1, ninja2) {
+//   if (ninja1.name < ninja2.name) {
+//     return -1;
+//   }
+//   if (ninja1.name > ninja2.name) {
+//     return 1;
+//   }
+//   return 0;
+// });
+
+// if (ninjas[0].name === "Kuma") {
+//   first = "Kuma is first";
+// }
+// if (ninjas[1].name === "Yagyu") {
+//   first1 = "  Yagyu is second";
+// }
+// if (ninjas[2].name === "Yoshi") {
+//   first2 = "Yoshi is third";
+// }
+//dottuka
+//9.10 Finding array indexes
+// const ninjas = ["Yagyu", "Yoshi", "Kuma", "Yoshi"];
+// if (ninjas.indexOf("Yoshi") === 1) {
+//   first = "Yoshi is at index 1";
+// }
+// if (ninjas.lastIndexOf("Yoshi") === 3) {
+//   first1 = "  and at index 3";
+// }
+// const yoshiIndex = ninjas.findIndex((ninja) => ninja === "Yoshi");
+// if (yoshiIndex === 1) {
+//   first2 = " Yoshi is still at index 1";
+// }
+//dottuka
+//9.9 Finding array Items
+// const ninjas = [
+//   { name: "Yagyu", weapon: "shuriken" },
+//   { name: "Yoshi" },
+//   { name: "Kuma", weapon: "wakizashi" },
+// ];
+// const ninjaWithWakizashi = ninjas.find((ninja) => {
+//   return ninja.weapon === "wakizashi";
+// });
+// if (ninjaWithWakizashi.name === "Kuma" && ninjaWithWakizashi === "wakizashi") {
+//   first = " Kuma is wielding a wakizashi";
+// }
+// const ninjaWithKatana = ninjas.find((ninja) => {
+//   return ninja.weapon === "katana";
+// });
+// if (ninjaWithKatana === undefined) {
+//   first1 = " We couldnt find a ninja that wields a katana";
+// }
+// const armedNinjas = ninjas.filter((ninja) => "weapon" in ninja);
+
+// if (armedNinjas.length === 2) {
+//   first2 = " There are two armed ninjas:";
+// }
+// if (armedNinjas[0].name === "Yagyu" && armedNinjas[1].name === "Kuma") {
+//   result1 = " Yagyu and Kuma";
+// }
+//dottuka
 //9.8 Testing arrays with the every and some methods
+// const ninjas = [
+//   { name: "Yagyu", weapon: "shuriken" },
+//   { name: "Yoshi" },
+//   { name: "Kuma", weapon: "wakizashi" },
+// ];
+// const allNinjasAreNamed = ninjas.every((ninja) => "name" in ninja);
+// const allNinjasAreArmed = ninjas.every((ninja) => "weapon" in ninja);
+// if (allNinjasAreNamed) {
+//   first = "Every ninja has a name ";
+// }
+// if (!allNinjasAreArmed) {
+//   first1 = " But not every ninja is armed";
+// }
+// const someNinjasAreArmed = ninjas.some((ninja) => "weapon" in ninja);
+// if (someNinjasAreArmed) {
+//   first2 = " But some ninjas are armed";
+// }
 //dottuka
 //9.7 Mapping an array
 // const ninjas = [
