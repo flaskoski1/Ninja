@@ -29,7 +29,243 @@ function App() {
 }
 
 export default App;
+//10.1 Testubg fir a specific pattern in a string
+//dottuka
+//9.23 Difference of sets
+// const ninjas = new Set(["Kuma", "Hattori", "Yagyu"]);
+// const samurai = new Set(["Hattori", "Oda", "Tomoe"]);
+
+// const pureNinjas = new Set([...ninjas].filter((ninja) => !samurai.has(ninja)));
+
+// if (pureNinjas.size === 2) {
+//   first = "there is only one ninja samurai";
+// }
+// if (pureNinjas.has("Kuma")) {
+//   first = "kuma is a trueninja";
+// }
+// if (pureNinjas.has("Yagyu")) {
+//   first = "yagyu is a true ninja";
+// }
+//dottuka
+//9.22 Intersection of sets
+// const ninjas = new Set(["Kuma", "Hattori", "Yagyu"]);
+// const samurai = new Set(["Hattori", "Oda", "Tomoe"]);
+
+// const ninjaSamuari = new Set([...ninjas].filter((ninja) => samurai.has(ninja)));
+// if (ninjaSamuari.size === 1) {
+//   first = "there s only one ninja samurai";
+// }
+// if (ninjaSamuari.has("Hattori")) {
+//   first = "Hattori is his name";
+// }
+//dottuka
+//9.21 Using sets to perform a union of collections
+// const ninjas = ["Kuma", "Hattori", "Yagyu"];
+// const samurai = ["Hattori", "Oda", "Tomoe"];
+// const warriors = new Set([...ninjas, ...samurai]);
+// if (warriors.has("Kuma")) {
+//   first = "Kuma is here";
+// }
+// if (warriors.has("Hattori")) {
+//   first = "Hattori is here";
+// }
+// if (warriors.has("Yagyu")) {
+//   first = "Yagyu is here";
+// }
+// if (warriors.has("Oda")) {
+//   first = "Oda is here";
+// }
+// if (warriors.has("Tomoe")) {
+//   first = "Tomoe is here";
+// }
+// if (warriors.size === 5) {
+//   first = "there are 5 warriors in total";
+// }
+//dottuka
+//9.20 Creating a set
+// const ninjas = new Set(["Kuma", "Hattori", "Yagyu", "Hattori"]);
+// if (ninjas.has("Hattori")) {
+//   first = " Hattori is in our set";
+// }
+// if (ninjas.size === 3) {
+//   first = "There are only three ninjas in our set";
+// }
+// if (!ninjas.has("Yoshi")) {
+//   first = "Yoshi is not in, yet...";
+// }
+// ninjas.add("Yoshi");
+// if (ninjas.has("Yoshi")) {
+//   first = "Yoshi is added";
+// }
+// if (ninjas.size === 4) {
+//   first = "there are four ninjas in our set";
+// }
+// if (ninjas.has("Kuma")) {
+//   first = "kuma is already added";
+// }
+// ninjas.add("Kuma");
+// if (ninjas.size === 4) {
+//   first = "adding kuma gain has no effect";
+// }
+// for (let ninja of ninjas) {
+//   if (ninja !== null) {
+//     first2 = ninja;
+//   }
+// }
+//dottuka
+//9.19 Mimicking sets with objects
+// function Set() {
+//   this.data = {};
+//   this.length = 0;
+// }
+// Set.prototype.has = function (item) {
+//   return typeof this.data[item] !== "undefined";
+// };
+// Set.prototype.add = function (item) {
+//   if (!this.has(item)) {
+//     this.data[item] = true;
+//     this.length++;
+//   }
+// };
+// Set.prototype.remove = function (item) {
+//   if (this.has(item)) {
+//     delete this.data[item];
+//     this.length--;
+//   }
+// };
+// const ninjas = new Set();
+// ninjas.add("Hattori");
+// ninjas.add("Hattori");
+// if (ninjas.has("Hattori" && ninjas.length === 1)) {
+//   first = " Our set contains only one Hattori";
+// }
+// ninjas.remove("Hattori");
+// if (!ninjas.has("Hattori") && ninjas.length === 0) {
+//   first1 = "our set is now empty";
+// }
+
+//dottuka
+//9.18 Iterating over maps
+// const directory = new Map();
+// directory.set("Yoshi", "+81 26 6462");
+// directory.set("Kuma", "+81 52 2378 6462");
+// directory.set("Hiro", "+81 76 277 46");
+// for (let item of directory) {
+//   if (item[0] !== null) {
+//     first = " Key: " + item[0];
+//   }
+//   if (item[1] !== null) {
+//     first1 = " Value: " + item[1];
+//   }
+// }
+// for (let key of directory.keys()) {
+//   if (key !== null) {
+//     result2 = " Key: " + key;
+//   }
+//   if (directory.get(key) !== null) {
+//     result1 = " Value: " + directory.get(key);
+//   }
+// }
+// for (var value of directory.values()) {
+//   if (value !== null) {
+//     first2 = " Value: " + value;
+//   }
+// }
+
+//dottuka
+//9.17 Key equality in maps
+// const map = new Map();
+// const currentLocation = location.href;
+// const firstLink = new URL(currentLocation);
+// const secondLink = new URL(currentLocation);
+// map.set(firstLink, { description: "firstLink" });
+// map.set(secondLink, { description: "secondLink" });
+// if (map.get(firstLink).description === "firstLink") {
+//   first = "First link mapping";
+// }
+// if (map.get(secondLink).description === "secondLink") {
+//   first1 = "Second link mapping";
+// }
+// if (map.size === 2) {
+//   first2 = "There are two mappings";
+// }
+//dottuka
+//9.16 Creating our first mapconst ninjaIslandMap = new Map();
+// const ninja1 = { name: "Yoshi" };
+// const ninja2 = { name: "Hattori" };
+// const ninja3 = { name: "Kuma" };
+
+// ninjaIslandMap.set(ninja1, { homeIsland: "Honshu" });
+// ninjaIslandMap.set(ninja2, { homeIsland: "Hokkaido" });
+
+// if (ninjaIslandMap.get(ninja1).homeIsland === "Honshu") {
+//   first = "The first mapping works";
+// }
+// if (ninjaIslandMap.get(ninja2).homeIsland === "Hokkaido") {
+//   first = "The second mapping works";
+// }
+// if (ninjaIslandMap.get(ninja3) === undefined) {
+//   first = "There is no mapping for the third ninja!";
+// }
+// if (ninjaIslandMap.size === 2) {
+//   first = "WE ve created two mappings";
+// }
+// if (ninjaIslandMap.has(ninja1) && ninjaIslandMap.has(ninja2)) {
+//   first = "WE have mappings for the first two ninjas";
+// }
+// if (!ninjaIslandMap.has(ninja3)) {
+//   first = "But not for the third ninja";
+// }
+// ninjaIslandMap.delete(ninja1);
+// if (!(ninjaIslandMap.has(ninja1) && ninjaIslandMap.size() === 1)) {
+//   first = "there is no first ninja mapping anymore";
+// }
+// ninjaIslandMap.clear();
+// if (ninjaIslandMap.size === 0) {
+//   first = "All mappings have been cleared!";
+// }
+//dottuka
+//9.15 Mapping values to HTML nodes with objects
+// const lashko = (
+//   <div>
+//     <div id="firstElement"></div>
+//     <div id="secondElement"></div>
+//     <script></script>
+//   </div>
+// );
+// const firstElement = document.getElementById("firstElement");
+// const secondElement = document.getElementById("secondElement");
+// const map = {};
+// map[firstElement] = { data: "firstElement" };
+// if (map[firstElement].data === "firstElement") {
+//   first = "the first element is correctly mapped";
+// }
+// map[secondElement] = { data: "secondElement" };
+// if (map[secondElement].data === "secondElement") {
+//   first1 = "the second element is correctly mapped";
+// }
+// if (map[firstElement].data === "firstElement") {
+//   first2 = " but now the first element is ovveriden";
+// }
+//dottuka
 //9.14 Objects have access to properties that werent explicitly defined
+// const dictionary = {
+//   ja: {
+//     "Ninjas for hire ": "kineski",
+//   },
+//   zh: {
+//     "Ninjas for hire ": "japonski",
+//   },
+//   ko: {
+//     "Ninjas for hire ": "korejski",
+//   },
+// };
+// if (dictionary.ja["Ninjas for hire "] === "kineski") {
+//   first = "we know how to say ninjas for hire in chinese";
+// }
+// if (typeof dictionary.ja["constructor"] === undefined) {
+//   first1 = dictionary.ja["constructor"];
+// }
 //dottuka
 //9.13 Simulating array-like methods
 // const body = (
