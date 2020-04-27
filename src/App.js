@@ -29,7 +29,108 @@ function App() {
 }
 
 export default App;
-//10.1 Testubg fir a specific pattern in a string
+//10.5 Differences between global and local searches with match
+//dottuka
+//10.4 A simple function for capturing an embedded value
+// let translateY;
+// function getTranslateY(elem) {
+//   const transformValue = elem.style.transform;
+//   if (transformValue) {
+//     const match = transformValue.match(/translateY\(([^\)]+)\)/);
+//     return match ? match[1] : "";
+//   }
+//   return "";
+// }
+// const square = document.getElementById("square");
+// if (getTranslateY(square) === "15px") {
+//   first = "we ve extracted the translateY value";
+// }
+// const lashko = (
+//   <div>
+//     <div id="square" style={{ transform: translateY("15px") }}></div>
+//     <script></script>
+//   </div>
+// );
+//dottuka
+//10.3 Compiling a runtime regular expression for later use
+// const lashko = (
+//   <div>
+//     <div class="samuari ninja"></div>
+//     <div class="ninja samurai"></div>
+//     <div></div>
+//     <span class="samurai ninja ronin"></span>
+//     <script></script>
+//   </div>
+// );
+// function findClassInElements(className, type) {
+//   const elems = document.getElementsByTagName(type || "*");
+//   const regex = new RegExp("(^|\\s" + className + "(\\s|$)");
+//   const results = [];
+//   for (let i = 0; i < elems.length; i++) {
+//     if (regex.test(elems[i].className)) {
+//       results.push(elems[i]);
+//     }
+//   }
+//   return results;
+// }
+// if (findClassInElements("ninja", "div").length === 2) {
+//   first = "The right amount of div ninjas was found.";
+// }
+// if (findClassInElements("ninja", "span").length === 1) {
+//   first = "The right amount of span ninjas was found.";
+// }
+// if (findClassInElements("ninja").length === 3) {
+//   first = "The right amount of ninjas was found.";
+// }
+//dottuka
+//10.2 Two ways to create a compiled regular expression
+// const re1 = /test/i;
+// const re2 = new RegExp("test", "i");
+// if (re1.toString() === "test/i") {
+//   first = "Verify the contents of the expression";
+// }
+// if (re1.test("TesT")) {
+//   first1 = " yes it s case insensitive";
+// }
+// if (re2.test("TesT")) {
+//   first1 = "this one is too";
+// }
+// if (re1.toString() === re2.toString()) {
+//   first = " the regular expressions are equal";
+// }
+// if (re1 !== re2) {
+//   first = " but they are differennt objects";
+// }
+
+//dottuka
+//10.1 Testng fir a specific pattern in a string
+// function isThisAZipCode(candidate) {
+//   if (typeof candidate !== "string" || candidate.length != 10) {
+//     return false;
+//   }
+//   for (let n = 0; n < candidate.length; n++) {
+//     let c = candidate[n];
+//     switch (n) {
+//       case 0:
+//       case 1:
+//       case 2:
+//       case 3:
+//       case 4:
+
+//       case 6:
+//       case 7:
+//       case 8:
+//       case 9:
+//         if (c < "0" || c > "9") return false;
+
+//         break;
+//       case 5:
+//         if (c != "-") return false;
+//         break;
+//     }
+//   }
+//   return true;
+// }
 //dottuka
 //9.23 Difference of sets
 // const ninjas = new Set(["Kuma", "Hattori", "Yagyu"]);
