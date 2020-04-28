@@ -29,7 +29,160 @@ function App() {
 }
 
 export default App;
+//Chapter 13. Surviving events, page:332
+//dottuka
+//10.13 Matching escaped characters in a CSS selector
+// const pattern = /^((\w+)|(\\.))+$/;
+// const tests = [
+//   "formUpdate",
+//   "form\\.update\\.whatever",
+//   "form\\:update",
+//   "\\f\\o\\r\\m\\u\\p\\d\\a\\t\\e",
+//   "form:update",
+// ];
+// for (let n = 0; n < tests.length; n++) {
+//   if (pattern.test(tests[n])) {
+//     first = tests[n] + "is a valid identifier";
+//   }
+// }
+//dottuka
+//10.12 Matching Unicode characters
+// const text = "\u5FCD\u8005\u30D1\u30EF\u30FC";
+// const matchAll = /[\w\u0080-\uFFFF_-]+/;
+// if (text.match(matchAll)) {
+//   first = " our regexp mmatches non ascii";
+// }
+//dottuka
+//10.11 Matching all characters, Including newlines
+// const html = "<b>Hello</b>\n<i>world!</i>";
+// if (/.*/.exec(html)[0] === "<b>Hello</b>") {
+//   first = " a normal capture doesnt handle endlines";
+// }
+// if (/[\S\s]*/.exec(html)[0] === "<b>Hello</b>\n<i>world!</i>") {
+//   first = "matching everything with a charactesr set.";
+// }
+// if (/(?:.|\s)*/.exec(html)[0] === "<b>Hello</b>\n<i>world!</i>") {
+//   first = "using a non capturing group to match everything";
+// }
+//dottuka
+//10.10 A technique for compressing a query string
+// function compress(source) {
+//   const keys = {};
+//   source.replace(/([^=&]+)=([^&]*)/g, function (full, key, value) {
+//     keys[key] = (keys[key] ? keys[key] + "," : "") + value;
+//     return "";
+//   });
+//   const result = [];
+//   for (let key in keys) {
+//     result.push(key + "=" + keys[key]);
+//   }
+//   return result.join("&");
+// }
+
+// if (compress("foo=1&foo=2&blah=a&blah=b&foo=3") === "foo1,2,3&blah=a,b") {
+//   first = "Compression is OK!";
+// }
+//dottuka
+//10.9 Converting a dashed string to camel case
+// function upper(all, letter) {
+//   return letter.toUpperCase();
+// }
+// if ("border-bottom-widht".replace(/-(\w)/g, upper) === "borderBottomWidth") {
+//   first = "Camel cased a hyphenated string";
+// }
+//dottuka
+//10.8 Grouping without capturing
+// const pattern = /((?:ninja-)+)sword/;
+// const ninjas = "ninja-ninja-sword".match(pattern);
+
+// if (ninjas.length === 2) {
+//   first = "Only one capture was returned";
+// }
+// if (ninjas[1] === "ninja-ninja-") {
+//   first = "matched both words without any extra capture";
+// }
+//dottuka
+//10.7 Using backreferences to match the contents of an HTML tag
+// const html = "<b class='hello'>Hello</b><i>world!</i>";
+// const pattern = /<(\w+)([^>]*)>(.*?)\/\1>/g;
+// let match = pattern.exec(html);
+// if (match[0] === "<b class='hello'>Hello</b>") {
+//   first = "the entire tag, start to finish";
+// }
+// if (match[1] === "b") {
+//   first = "the tag name";
+// }
+// if (match[2] === " class='hello'") {
+//   first = "the tag attributes";
+// }
+// if (match[3] === "Hello") {
+//   first = "the contents of the tag";
+// }
+// match = pattern.exec(html);
+// if (match[0] === "<i>world!</i>") {
+//   first = "the entire tag, 2 start to finish";
+// }
+// if (match[1] === "i") {
+//   first = "the tag name";
+// }
+// if (match[2] === "") {
+//   first = "the tag attributes";
+// }
+// if (match[3] === "world!") {
+//   first = "the contents of the tag";
+// }
+//dottuka
+//10.6 Using the exec method to do both capturing and a global search
+// const html = "<div class='test'><b>Hello</b><i>world!</i></div>";
+// const tag = /<(\/?)(\w+)([^>]*?)>/g;
+// let match,
+//   num = 0;
+// while ((match = tag.exec(html)) !== null) {
+//   if (match.length === 4) {
+//     first = "Every match finds each tag and 3 captures.";
+//   }
+//   num++;
+// }
+// if (num === 6) {
+//   first = "3 opening and 3 closing tags found";
+// }
+//dottuka
 //10.5 Differences between global and local searches with match
+// const html = "<div class='test'><b>Hello</b><i>world!</i></div>";
+// const results = html.match(/<(\/?)(\w+)([^>]*?)>/);
+// if (results[0] === "<div class='test'>") {
+//   first = "the entire match";
+// }
+// if (results[1] === "") {
+//   first = "the missing slash";
+// }
+// if (results[2] === "div") {
+//   first = "the tag name";
+// }
+// if (results[3] === " class='test'") {
+//   first = "the attributes";
+// }
+
+// const all = html.match(/<(\/?)(\w+)([^>]*?)>/g);
+// if (all[0] === "<div class='test'>") {
+//   first = "openning div tag";
+// }
+// if (all[1] === "<b>") {
+//   first = "openiing b tag";
+// }
+// if (all[2] === "</b>") {
+//   first = "closing b tag";
+// }
+// if (all[3] === "<i>") {
+//   first = "opening i tag";
+// }
+
+// if (all[4] === "</i>") {
+//   first = "closing i tag";
+// }
+// if (all[5] === "</div>") {
+//   first = "closing div tag";
+// }
 //dottuka
 //10.4 A simple function for capturing an embedded value
 // let translateY;
