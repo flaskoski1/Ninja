@@ -1,21 +1,22 @@
 import React from "react";
+//neshto novo
 import "./App.css";
 let first;
-let first1;
-let first2;
-let result1;
-let result2;
-let result3;
-let result4;
-let result5;
-let result6;
-let result7;
+// let first1;
+// let first2;
+// let result1;
+// let result2;
+// let result3;
+// let result4;
+// let result5;
+// let result6;
+// let result7;
 
 function App() {
   return (
     <div className="App">
       {first}
-      {first1}
+      {/* {first1}
       {first2}
       {result1}
       {result2}
@@ -23,12 +24,13 @@ function App() {
       {result4}
       {result5}
       {result6}
-      {result7}
+      {result7} */}
     </div>
   );
 }
 
 export default App;
+//neshto novo
 //Chapter 13. Surviving events, page:332
 //dottuka
 //10.13 Matching escaped characters in a CSS selector
